@@ -98,41 +98,55 @@ const Home = () => {
 
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px] mt-[30px] lg:mt-[55px]   ' >
             <div className='py-[30px] px-5'>
+
               <div className='flex items-center justify-center rounded-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-irisBlueColor shadow-md '> <img className='' src={icon01} alt='' /> </div>
               <div className='mt-[30px] '>
+
                 <h2 className='text-[26px] leading-9 text-headingColor font-[700] text-center'>Find a Doctor</h2>
+
                 <p className='text-[16px] leading-7 text-headingColor font-[400] mt-4 text-center transition-transform duration-300 ease-in-out hover:scale-105 hover:text-irisBlueColor'>
                   World class care for everyone. Our health system offers
                   unmatched, expert health care.From the lab to the  hospital</p>
-                <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-cyan-400 hover:border-none  '>
+
+                <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:border-none transition-all duration-300 ease-in-out hover:scale-105  hover:bg-irisBlueColor hover:shadow-black hover:shadow-xl '>
+
                   <BsArrowRight className='group-hover:text-white w-6 h-5' />
                 </Link>
               </div>
             </div>
 
             <div className='py-[30px] px-5'>
+
               <div className='flex items-center justify-center rounded-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-irisBlueColor shadow-md'> <img className='' src={icon02} alt='' /> </div>
               <div className='mt-[30px] '>
+
                 <h2 className='text-[26px] leading-9 text-headingColor font-[700] text-center'>Find a Hospital</h2>
+
                 <p className='text-[16px] leading-7 text-headingColor font-[400] mt-4 text-center transition-transform duration-300 ease-in-out hover:scale-105 hover:text-irisBlueColor'>
+
                   World class care for everyone. Our health system offers
                   unmatched, expert health care.From the lab to the  hospital</p>
-                <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-cyan-400 hover:border-none  '>
+
+                <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group  hover:border-none transition-all duration-300 ease-in-out hover:scale-105  hover:bg-irisBlueColor hover:shadow-black hover:shadow-xl '>
                   <BsArrowRight className='group-hover:text-white w-6 h-5' />
                 </Link>
               </div>
             </div>
 
             <div className='py-[30px] px-5'>
+
               <div className='flex items-center justify-center rounded-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-irisBlueColor shadow-md'> <img className='' src={icon03} alt='' /> </div>
               <div className='mt-[30px] '>
+
                 <h2 className='text-[26px] leading-9 text-headingColor font-[700] text-center'>Book Appointment</h2>
+
                 <p className='text-[16px] leading-7 text-headingColor font-[400] mt-4 text-center transition-transform duration-300 ease-in-out hover:scale-105 hover:text-irisBlueColor'>
                   World class care for everyone. Our health system offers
                   unmatched, expert health care. From the lab to the  hospital</p>
 
                 {/* ======== Arrow icon ======== */}
-                <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-cyan-400 hover:border-none  '>
+                <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group  hover:border-none transition-all duration-300 ease-in-out hover:scale-105  hover:bg-irisBlueColor hover:shadow-black hover:shadow-xl '>
+
                   <BsArrowRight className='group-hover:text-white w-6 h-5' />
                 </Link>
               </div>
@@ -243,7 +257,7 @@ const Home = () => {
       </section>
       {/* =========== FAQ  section end =========== */}
 
-      {/* testimonials section start */}
+      {/*=============== testimonials section start ================*/}
       <section>
         <div className="container">
           <div className='xl:w-[470px] mx-auto'>
@@ -254,7 +268,7 @@ const Home = () => {
           <Testimonial />
         </div>
       </section>
-      {/* testimonials section start */}
+      {/*=============== testimonials section start ===============*/}
     </>
 
   )

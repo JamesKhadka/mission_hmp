@@ -31,7 +31,7 @@ const DoctorCard = ({ doctor }) => {
           <p className='text-[15px] leading-6 font-[400] text-textColor'> At {hospital}</p>
         </div>
 
-        <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border-solid border-[#181A1E]  flex items-center justify-center group hover:bg-cyan-400 hover:border-none  '>
+        <Link to='/doctors' className='w-[44px] h-[44px] rounded-full border-solid border-[#181A1E]  flex items-center justify-center group hover:border-none transition-all duration-300 ease-in-out hover:scale-105  hover:bg-irisBlueColor hover:shadow-black hover:shadow-xl '>
           <BsArrowRight className='group-hover:text-white w-6 h-5' />
         </Link>
       </div>

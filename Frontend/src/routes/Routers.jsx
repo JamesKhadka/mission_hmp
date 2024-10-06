@@ -8,6 +8,7 @@ import Doctors from '../pages/Doctors/Doctors';
 import DoctorDetails from '../pages/Doctors/DoctorDetails';
 import { Routes, Route } from 'react-router-dom'
 import Hospital from '../pages/Hospital';
+import ForgotPassword from '../pages/ForgotPassword';
 
 
 
@@ -23,6 +24,7 @@ const Routers = () => {
       <Route path="/register" element={<Signup />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/services" element={<Services />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
     </Routes>
   )
 }

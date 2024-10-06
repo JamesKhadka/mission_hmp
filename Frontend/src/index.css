@@ -32,6 +32,14 @@
   .header{
     @apply bg-[url('./assets/images/mask.png')] bg-no-repeat bg-cover w-full h-[100px] leading-[100px];
   }
+
+  .form__label{
+    @apply  text-textColor font-semibold text-[16px] mb-2
+  }
+
+  .form__input{
+    @apply  w-full px-4 py-3 border border-solid border-irisBlueColor focus:outline-none focus:border-primaryColor text-[16px] leading-7 text-textColor placeholder:text-textColor cursor-pointer ;
+  }
 }
 
 
