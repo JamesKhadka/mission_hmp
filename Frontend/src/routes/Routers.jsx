@@ -9,6 +9,7 @@ import DoctorDetails from '../pages/Doctors/DoctorDetails';
 import { Routes, Route } from 'react-router-dom'
 import Hospital from '../pages/Hospital';
 import ForgotPassword from '../pages/ForgotPassword';
+import HospitalDetails from '../pages/HospitalDetails';
 
 
 
@@ -19,6 +20,7 @@ const Routers = () => {
       <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />
       <Route path="/hospital" element={<Hospital />} />
+      <Route path="/hospital/:id" element={<HospitalDetails />} />
       <Route path="/doctors" element={<Doctors />} />
       <Route path="/doctors/:id" element={<DoctorDetails />} />
       <Route path="/login" element={<Login />} />
