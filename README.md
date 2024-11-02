@@ -42,7 +42,7 @@ i. Implements secure user authentication and role-based access controls to prote
 The goal of MediConnect is to centralize hospital management processes, reduce paperwork, and improve patient experience by simplifying operations and access to healthcare information.
 
 
-
+<h1>Developer option to run</h1>
 1. npm install
 2. For forntend - npm run dev
 3. For backend - npm run start-dev
