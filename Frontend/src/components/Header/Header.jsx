@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
 import mainlogo from '../../assets/images/mainlogo.png';
-import userImg from '../../assets/images/avatar-icon.png';
 import { NavLink, Link } from 'react-router-dom'
 import { BiMenu } from 'react-icons/bi'
+import { authContext } from '../../context/AuthContext'
 
 const navLinks = [
   {
@@ -31,6 +31,8 @@ const navLinks = [
 const Header = () => {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
+  const { user, role, token } = useContext(authContext)
+
 
   //  all these function are for  the menu toggle and the sticky header functionality
 
@@ -85,27 +87,29 @@ const Header = () => {
           </div>
 
           {/* ========= profile icon ======== */}
-          <div className='flex tems-center gap-4'>
-            <div className='hidden'>
-              <Link to='/'>
-                <figure className='w-[35px] h-[35px] rounded-full '>
-                  <img src={userImg} className='w-full rounded-full' alt='' />
-                </figure>
+          {/* need to fix */}
+          <div className='flex items-center gap-4'>
+
+            {
+              token && user ? <div>
+                <Link to={`${role === 'doctor' ? '/doctors/profile/me' : '/users/profile/me'}`}>
+                  <figure className='w-[35px] h-[35px] rounded-full '>
+                    <img src={user?.photo} className='w-full rounded-full' alt='' />
+                  </figure>
+                </Link>
+              </div> : <Link to='/login'>
+                <button className='bg-irisBlueColor py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px] transition-all duration-300 ease-in-out hover:scale-105   hover:shadow-black hover:shadow-xl' >Login</button>
               </Link>
-            </div>
+            }
           </div>
 
-          {/* ============== login ========== */}
-          <Link to='/login'>
-            <button className='bg-irisBlueColor py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px] transition-all duration-300 ease-in-out hover:scale-105   hover:shadow-black hover:shadow-xl' >Login</button>
-          </Link>
           <span className='md:hidden' onClick={toggleMenu}>
             <BiMenu className='w-6 h-6 cursor-pointer' />
           </span>
 
         </div>
       </div>
-    </header>
+    </header >
   );
 }
 

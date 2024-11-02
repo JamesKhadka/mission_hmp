@@ -72,6 +72,7 @@ const Home = () => {
               </div>
 
             </div>
+
             {/* ======= home image ======== */}
             <div className="flex gap-[30px]  justify-end">
               <div><img className='w-full' src={heroImg01} alt='home image' /> </div>

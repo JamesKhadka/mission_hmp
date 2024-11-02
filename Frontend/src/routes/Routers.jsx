@@ -10,6 +10,9 @@ import { Routes, Route } from 'react-router-dom'
 import Hospital from '../pages/Hospital';
 import ForgotPassword from '../pages/ForgotPassword';
 import HospitalDetails from '../pages/HospitalDetails';
+import MyAccount from '../Dashboard/user-account/MyAccount';
+import Dashboard from '../Dashboard/doctor-account/Dashboard';
+import ProctedRoute from './ProctedRoute';
 
 
 
@@ -18,17 +21,32 @@ const Routers = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+
       <Route path="/home" element={<Home />} />
+
       <Route path="/hospital" element={<Hospital />} />
+
       <Route path="/hospital/:id" element={<HospitalDetails />} />
+
       <Route path="/doctors" element={<Doctors />} />
+
       <Route path="/doctors/:id" element={<DoctorDetails />} />
+
       <Route path="/login" element={<Login />} />
+
       <Route path="/register" element={<Signup />} />
+
       <Route path="/contact" element={<Contact />} />
+
       <Route path="/services" element={<Services />} />
+
       <Route path="/forgot-password" element={<ForgotPassword />} />
-    </Routes>
+
+      <Route path="/users/profile/me" element={<MyAccount />} />
+
+      <Route path="/doctors/profile/me" element={<ProctedRoute allowedRoles={['doctor']}><Dashboard /></ProctedRoute>} />
+
+    </Routes >
   )
 }
 
