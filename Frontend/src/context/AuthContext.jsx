@@ -4,11 +4,11 @@ import { useContext, useEffect, useReducer, createContext } from "react";
 //properties which represent the user info 
 
 const initialState = {
-  user: localStorage.getItem("user") != null && localStorage.getItem("user") !== "undefined"
-    ? JSON.parse(localStorage.getItem("user"))
-    : null,
-  role: localStorage.getItem("role") || null,
-  token: localStorage.getItem("token") || null,
+  user: localStorage.getItem('user') != undefined ? JSON.parse(localStorage.getItem('user')) : null,
+  role: localStorage.getItem('role') || null,
+  token: localStorage.getItem('token') || null,
+
+
 };
 
 
@@ -25,11 +25,12 @@ const authReducer = (state, action) => {
         token: null,
       };
 
-    case 'LOGIN_SUCCESS':
+    case "LOGIN_SUCCESS":
       return {
         user: action.payload.user,
-        role: action.payload.role,
         token: action.payload.token,
+        role: action.payload.role,
+
       };
 
     case 'LOGOUT':
@@ -52,15 +53,17 @@ export const AuthContextProvider = ({ children }) => {
     localStorage.setItem('token', state.token)
     localStorage.setItem('role', state.role)
 
-  }, [state])
+  }, [state]);
 
-  return <authContext.Provider
-    value={{
-      user: state.user,
-      role: state.role,
-      token: state.token,
-      dispatch
-    }}>
-    {children}
-  </authContext.Provider>
+  return (
+    <authContext.Provider
+      value={{
+        user: state.user,
+        token: state.token,
+        role: state.role,
+        dispatch,
+      }}>
+      {children}
+    </authContext.Provider>
+  )
 }

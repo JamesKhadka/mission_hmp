@@ -1,4 +1,3 @@
-import React from 'react'
 import { useEffect, useState } from 'react'
 import { token } from '../config'
 
@@ -12,13 +11,13 @@ const useFetchData = (url) => {
       setLoading(true)
       try {
         const res = await fetch(url, {
-          headers: { Authorization: `Bearer ${token}` }
+          headers: { Authorization: `Bearer ${token}` },
         })
 
-        const result = await res.json()
+        const result = await res.json();
 
         if (!res.ok) {
-          throw new Error(result.message)
+          throw new Error(result.message + '💀')
         }
 
         setData(result.data)
@@ -33,10 +32,11 @@ const useFetchData = (url) => {
   }, [url])
 
 
-  return (
-    data, loading, error
-
-  )
+  return {
+    data,
+    loading,
+    error
+  }
 }
 
 export default useFetchData

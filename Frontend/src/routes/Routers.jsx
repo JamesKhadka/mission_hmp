@@ -42,7 +42,7 @@ const Routers = () => {
 
       <Route path="/forgot-password" element={<ForgotPassword />} />
 
-      <Route path="/users/profile/me" element={<MyAccount />} />
+      <Route path="/users/profile/me" element={<ProctedRoute allowedRoles={['patient']}><MyAccount /></ProctedRoute>} />
 
       <Route path="/doctors/profile/me" element={<ProctedRoute allowedRoles={['doctor']}><Dashboard /></ProctedRoute>} />
 

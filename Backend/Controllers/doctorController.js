@@ -95,7 +95,7 @@ export const getDoctorProfile = async (req, res) => {
     }
 
     const { password, ...rest } = doctor._doc
-    const appointments = await Booking.find({ doctorId: doctorId })
+    const appointments = await Booking.find({ doctor: doctorId })
 
 
     res.status(200).json({ success: true, message: 'Doctor Profile Found Successfully.....', data: { ...rest, appointments } })

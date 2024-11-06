@@ -9,12 +9,12 @@ import HashLoader from 'react-spinners/HashLoader'
 const Login = () => {
 
   const [formData, setFormData] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   })
 
   const [loading, setLoading] = useState(false)
-  const nevigate = useNavigate()
+  const navigate = useNavigate()
   const { dispatch } = useContext(authContext)
 
   const handleChange = (e) => {
@@ -27,6 +27,7 @@ const Login = () => {
     setLoading(true);
 
     try {
+      //fetching login  endpoint from  backend
       const res = await fetch(`${BASE_URL}/auth/login`, {
         method: 'POST',
         headers: {
@@ -43,15 +44,17 @@ const Login = () => {
 
       dispatch({
         type: 'LOGIN_SUCCESS',
-        payload: result.data,
-        token: result.token,
-        role: result.role
+        payload: {
+          user: result.data,
+          token: result.token,
+          role: result.role,
+        }
       });
       console.log(result, 'login data')
 
       setLoading(false)
       toast.success(result.message)
-      nevigate('/home')
+      navigate('/home')
 
     } catch (error) {
       toast.error(error.message)

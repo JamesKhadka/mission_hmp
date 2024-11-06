@@ -73,7 +73,7 @@ export const getUserProfile = async (req, res) => {
   const userId = req.userId;
 
   try {
-    const user = await user.findById(userId)
+    const user = await User.findById(userId)
 
     if (!user) {
       return res.status(404).json({ success: false, message: 'User Not Found.....' })
@@ -82,7 +82,7 @@ export const getUserProfile = async (req, res) => {
     const { password, ...rest } = user._doc
     res.status(200).json({ success: true, message: 'User Profile Found Successfully.....', data: { ...rest } })
   } catch (error) {
-    console.error(error.message)
+    // console.error(error.message)
     return res.status(500).json({ success: false, message: "Something went  wrong.. can't  get user profile....." })
   }
 }
@@ -95,8 +95,8 @@ export const getMyAppointments = async (req, res) => {
     const bookings = await Booking.find({ user: req.userId })
 
 
-    //step 2:Extractdoctor id's from appointments  bookings
-    const doctorIds = bookings.map(el => doctorIds.id)
+    //step 2:Extract doctor id's from appointments  bookings
+    const doctorIds = bookings.map(el => el.doctor.id)
 
     //step 3: Retrive  doctor details from doctor collection using doctor id's
     const doctors = await Doctor.find({ _id: { $in: doctorIds } }).select('-password');

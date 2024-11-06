@@ -31,6 +31,7 @@ const navLinks = [
 const Header = () => {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
+  //initializing data of user after login into  the application
   const { user, role, token } = useContext(authContext)
 
 
@@ -65,7 +66,7 @@ const Header = () => {
 
           {/*======== Logo ===========*/}
           <div className="flex items-center">
-            <img src={mainlogo} alt="logo" className="w-[24%] h-[30%]  mb-4 " />
+            <img src={mainlogo} alt="logo" className="w-[100px] h-[100px]  mb-4 " />
             <p className="text-irisBlueColor text-[30px] font-extrabold cursor-pointer flex m-0 p-0">
               Medi<span className="sm:block hidden">Connect</span>
             </p>
@@ -87,26 +88,29 @@ const Header = () => {
           </div>
 
           {/* ========= profile icon ======== */}
-          {/* need to fix */}
           <div className='flex items-center gap-4'>
+            {/* conditional rendoring accoring  to user type */}
 
             {
-              token && user ? <div>
-                <Link to={`${role === 'doctor' ? '/doctors/profile/me' : '/users/profile/me'}`}>
-                  <figure className='w-[35px] h-[35px] rounded-full '>
-                    <img src={user?.photo} className='w-full rounded-full' alt='' />
-                  </figure>
-                </Link>
-              </div> : <Link to='/login'>
-                <button className='bg-irisBlueColor py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px] transition-all duration-300 ease-in-out hover:scale-105   hover:shadow-black hover:shadow-xl' >Login</button>
-              </Link>
+              token && user ?
+                (
+                  <div>
+                    <Link to={`${role === 'doctor' ? '/doctors/profile/me' : '/users/profile/me'}`}>
+                      <figure className='w-[35px] h-[35px] rounded-full '>
+                        <img src={user?.photo} className='w-full rounded-full' alt='' />
+                      </figure>
+                    </Link>
+                  </div>
+                ) : (
+                  <Link to='/login'>
+                    <button className='bg-irisBlueColor py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px] transition-all duration-300 ease-in-out hover:scale-105   hover:shadow-black hover:shadow-xl' >Login</button>
+                  </Link>
+                )
             }
+            <span className='md:hidden' onClick={toggleMenu}>
+              <BiMenu className='w-6 h-6 cursor-pointer' />
+            </span>
           </div>
-
-          <span className='md:hidden' onClick={toggleMenu}>
-            <BiMenu className='w-6 h-6 cursor-pointer' />
-          </span>
-
         </div>
       </div>
     </header >

@@ -28,16 +28,15 @@ const Signup = () => {
     role: 'patient'
   })
 
-  const nevigate = useNavigate()
+  const navigate = useNavigate()
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleFileInputChange = async (e) => {
-    const file = e.target.files[0];
-    //laater we use cloudinary to upload  the image
-
+  const handleFileInputChange = async event => {
+    const file = event.target.files[0];
+    // we use cloudinary to upload  the image
     const data = await uploadImageToCloudinary(file);
     setPreviewURL(data.url)
     setSelectedFile(data.url)
@@ -47,12 +46,14 @@ const Signup = () => {
   }
 
   const handleSubmit = async (e) => {
+    // console.log(formData);
     e.preventDefault();
     setLoading(true);
 
     try {
+      //fetching register  endpoint from  backend
       const res = await fetch(`${BASE_URL}/auth/register`, {
-        method: 'POST',
+        method: 'post',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -67,7 +68,7 @@ const Signup = () => {
 
       setLoading(false)
       toast.success(message)
-      nevigate('/login')
+      navigate('/login')
 
     } catch (error) {
       toast.error(error.message)
