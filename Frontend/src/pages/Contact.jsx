@@ -34,7 +34,7 @@ const Contact = () => {
 
         <section>
           <div className="container">
-            <div className='xl:w-[470px] mx-auto'>
+            <div className='xl:w-[600px] mx-auto'>
               <h2 className='heading text-center '> Meet Our Developers </h2>
               <p className='text__para text-center'>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, molestiae facere! Maiores deleniti explicabo officiis omnis dicta ullam optio.</p>

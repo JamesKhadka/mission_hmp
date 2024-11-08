@@ -34,7 +34,7 @@
   }
 
   .form__label{
-    @apply  text-textColor font-semibold text-[16px] mb-2
+    @apply  text-textColor font-semibold text-[16px] mb-2 
   }
 
   .form__input{

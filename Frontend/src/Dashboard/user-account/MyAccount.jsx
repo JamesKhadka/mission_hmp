@@ -6,7 +6,7 @@ import Profile from './Profile'
 import useGetProfile from '../../hooks/useFetchData'
 import { BASE_URL } from '../../config'
 import Loading from '../../components/Loader/Loading'
-// import Error from '../../components/Error/Error'
+import Error from '../../components/Error/Error'
 
 const MyAccount = () => {
 
@@ -53,6 +53,7 @@ const MyAccount = () => {
                 {/* ================== action button of account  ================= */}
                 <div className='mt-[50px] md:mt-[100px]'>
                   <button className='w-full bg-green-600 p-3 text-[16px] leading-7 rounded-md text-black font-bold transition-all duration-300 ease-in-out hover:scale-105   hover:shadow-black hover:shadow-xl' onClick={handleLogout}>Logout Account</button>
+
                   <button className='w-full bg-red-600 mt-4 p-3 text-[16px] leading-7 rounded-md text-black font-bold transition-all duration-300 ease-in-out hover:scale-105   hover:shadow-black hover:shadow-xl'>Delete Account</button>
 
                 </div>

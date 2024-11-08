@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
 import { AiFillStar } from 'react-icons/ai'
+import { useParams } from 'react-router-dom';
+
+import { BASE_URL, token } from '../../config';
+import { toast } from 'react-toastify';
+import HashLoader from 'react-spinners/HashLoader';
 
 const FeedbackForm = () => {
 
@@ -9,8 +14,42 @@ const FeedbackForm = () => {
 
   const [reviewText, setReviewText] = useState('')
 
+  const [loading, setLoading] = useState(false)
+
+  const { id } = useParams()
+
   const handleSubmitReview = async (e) => {
     e.preventDefault();
+    setLoading(true)
+
+    try {
+
+      if (!rating || !reviewText) {
+        setLoading(false)
+        return toast.error('Rating & Review fields are required')
+      }
+
+      const res = await fetch(`${BASE_URL}/doctors/${id}/reviews`, {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({ rating, reviewText })
+      })
+
+      const result = await res.json()
+
+      if (!res.ok) {
+        throw new Error(result.message)
+      }
+      setLoading(false)
+      toast.success(result.message)
+
+    } catch (err) {
+      setLoading(false)
+      toast.error(err.message)
+    }
   }
 
 
@@ -52,7 +91,9 @@ const FeedbackForm = () => {
         <textarea className='border border-solid border-irisBlueColor focus:outline outline-primaryColor w-full px-4 py-3 rounded-md' rows='5' placeholder='Write your experience ' onChange={e => setReviewText(e.target.value)}>
         </textarea>
 
-        <button type='submit' className='btn font-[600] transition-all duration-300 ease-in-out hover:scale-105   hover:shadow-black hover:shadow-xl' onClick={handleSubmitReview}>Submit Feedback</button>
+        <button type='submit' className='btn font-[600] transition-all duration-300 ease-in-out hover:scale-105   hover:shadow-black hover:shadow-xl' onClick={handleSubmitReview}>
+          {loading ? <HashLoader size={25} color='#fff' /> : 'Submit Feedback'}
+        </button>
       </div>
       {/*============== textarea  section end =============*/}
     </form >
