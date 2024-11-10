@@ -29,21 +29,21 @@ const Contact = () => {
           {/*==================== submit  button ================== */}
           <button type='submit' className='btn rounded-full sm:w-fit transition-all duration-300 ease-in-out hover:scale-105   hover:shadow-black hover:shadow-xl'>Submit</button>
         </form>
-
-        {/* =======  Founder List section start ======= */}
-
-        <section>
-          <div className="container">
-            <div className='xl:w-[600px] mx-auto'>
-              <h2 className='heading text-center '> Meet Our Developers </h2>
-              <p className='text__para text-center'>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, molestiae facere! Maiores deleniti explicabo officiis omnis dicta ullam optio.</p>
-            </div>
-            <FounderList />
-          </div>
-        </section>
-        {/* =======  Founder List section end ======= */}
       </div>
+
+      {/* =======  Founder List section start ======= */}
+
+      <section>
+        <div className="container">
+          <div className='xl:w-[600px] mx-auto'>
+            <h2 className='heading text-center '> Meet Our Developers </h2>
+            <p className='text__para text-center'>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, molestiae facere! Maiores deleniti explicabo officiis omnis dicta ullam optio.</p>
+          </div>
+          <FounderList />
+        </div>
+      </section>
+      {/* =======  Founder List section end ======= */}
 
     </section>
   )

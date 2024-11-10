@@ -13,6 +13,7 @@ import HospitalDetails from '../pages/HospitalDetails';
 import MyAccount from '../Dashboard/user-account/MyAccount';
 import Dashboard from '../Dashboard/doctor-account/Dashboard';
 import ProctedRoute from './ProctedRoute';
+import CheckoutSuccess from '../pages/CheckoutSuccess';
 
 
 
@@ -41,6 +42,8 @@ const Routers = () => {
       <Route path="/services" element={<Services />} />
 
       <Route path="/forgot-password" element={<ForgotPassword />} />
+
+      <Route path="/checkout-success" element={<CheckoutSuccess />} />
 
       <Route path="/users/profile/me" element={<ProctedRoute allowedRoles={['patient']}><MyAccount /></ProctedRoute>} />
 
