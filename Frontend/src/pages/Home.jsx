@@ -17,6 +17,7 @@ import DoctorList from '../components/Doctors/DoctorList'
 import FaqList from '../components/Faq/FaqList'
 import Testimonial from '../components/Testimonial/Testimonial'
 const Home = () => {
+
   return (
     <>
       {/* ============= home section ========== */}
@@ -31,7 +32,7 @@ const Home = () => {
 
               <div className='lg:w-[570px] '>
 
-                <h1 className='text-[36px] leading-[46px] text-headingColor font-[800] md:text-[60px]  md:leading-[70px]'>We Help Patients Live a Healthy, Longer Life</h1>
+                <h1 className='text-[36px] leading-[46px] text-headingColor font-[800] md:text-[60px]  md:leading-[70px] '>"We Help Patients Live a Healthy, Longer Life"</h1>
 
                 <p className='text__para'>
 

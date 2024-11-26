@@ -7,15 +7,15 @@ const FounderCard = ({ founder }) => {
 
   const socialLinks = [
     {
-      path: "https://www.instagram.com/james_khadka__/",
+      path: founder.path1,
       icon: <AiOutlineInstagram className="group-hover:text-[#E1306C] w-6 h-6" />
     },
     {
-      path: "https://github.com/JamesKhadka",
+      path: founder.path2,
       icon: <AiFillGithub className="group-hover:text-black w-6 h-6" />
     },
     {
-      path: "https://www.linkedin.com/in/james-khadka-26b100236/",
+      path: founder.path3,
       icon: <RiLinkedinFill className="group-hover:text-[#0A66C2] w-6 h-6" />
     }
   ];
@@ -28,7 +28,7 @@ const FounderCard = ({ founder }) => {
 
   return (
     <div className='p-3 lg:p-5 rounded-xl transition-all duration-300 ease-in-out hover:scale-105   hover:shadow-black hover:shadow-xl'>
-      <div> <img src={photo} alt='' className='w-full' /> </div>
+      <div className="group relative overflow-hidden rounded-lg "> <img src={photo} alt='' className="h-full w-full  rounded-lg transition-transform duration-500 ease-in-out group-hover:scale-110" /> </div>
 
       <h2 className='text-[18px] leading-[30px] lg:text-[26px] lg:leading-9 text-headingColor font-[700] mt-3 lg:mt-5 '>{name}</h2>
 

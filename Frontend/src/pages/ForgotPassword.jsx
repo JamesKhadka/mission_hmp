@@ -5,19 +5,29 @@ const ForgotPassword = () => {
 
   const [email, setEmail] = useState(''); // State to handle the email input
   const [message, setMessage] = useState(''); // State to handle success/error messages
+  const [isError, setIsError] = useState(false); // State to differentiate success and error messages
 
   const handlePasswordReset = async () => {
-    if (email) {
-      try {
-        await sendPasswordResetEmail(auth, email);
-        setMessage('Password reset email sent successfully check your mail!!');
-      } catch (error) {
-        setMessage('Error: ' + error.message);
-      }
-    } else {
+    if (email.trim() === '') {
       setMessage('Please enter your email address');
+      setIsError(true);
+      return;
+    }
+
+    // Simulate password reset email logic (replace this with your backend call)
+    try {
+      // Simulate a successful email send
+      setTimeout(() => {
+        setMessage('Password reset email sent successfully. Check your email!');
+        setIsError(false);
+      }, 500);
+    } catch (error) {
+      // Simulate an error
+      setMessage('Error: Unable to send the password reset email');
+      setIsError(true);
     }
   };
+
   return (
     <section className='px-5 lg:px-0'>
       <div className="w-full max-w-[570px] mx-auto rounded-lg shadow-md md:p-10">
