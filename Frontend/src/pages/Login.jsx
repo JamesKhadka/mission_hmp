@@ -102,6 +102,10 @@ const Login = () => {
 
           {/* ===========forgot password ============== */}
           <p className='mt-5 text-textColor text-center'>Don&apos;t Have an Account ? <Link to='/register' className='text-irisBlueColor font-medium ml-1'>Register</Link></p>
+
+          <p className='mt-5 text-textColor text-center'>Are you an Admin ? <Link to='/admin-login' className='text-irisBlueColor font-medium ml-1'>Admin Login</Link></p>
+
+
           <p className='mt-5 text-textColor  text-center'><Link to='/forgot-password' className='text-irisBlueColor font-medium ml-1'>Forgot Password</Link></p>
 
         </form>

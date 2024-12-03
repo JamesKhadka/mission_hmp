@@ -14,8 +14,13 @@ import MyAccount from '../Dashboard/user-account/MyAccount';
 import Dashboard from '../Dashboard/doctor-account/Dashboard';
 import ProctedRoute from './ProctedRoute';
 import CheckoutSuccess from '../pages/CheckoutSuccess';
-
-
+import AdminLogin from '../pages/Admin/AdminLogin';
+import AdminLayout from '../pages/Admin/AdminLayout';
+import AdminDashboard from '../pages/Admin/AdminDashboard';
+import AdminDoctor from '../pages/Admin/AdminDoctor';
+import AdminAppointment from '../pages/Admin/AdminAppointment';
+import AdminSchedule from '../pages/Admin/AdminSchedule';
+import AdminPatients from '../pages/Admin/AdminPatients';
 
 
 const Routers = () => {
@@ -49,7 +54,14 @@ const Routers = () => {
 
       <Route path="/doctors/profile/me" element={<ProctedRoute allowedRoles={['doctor']}><Dashboard /></ProctedRoute>} />
 
-    </Routes >
+      <Route path="/admin-login" element={<AdminLogin />} />
+
+      <Route path="/admin" element={<AdminLayout />} />
+
+
+
+
+    </Routes>
   )
 }
 
